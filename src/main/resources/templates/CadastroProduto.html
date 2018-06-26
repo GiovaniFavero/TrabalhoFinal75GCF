@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head> 
+	<title>Cadastro de Produto</title>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="viewport" content="width=device-width"/>
+	
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/reset.css}"/> 
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/normalize.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/bootstrap.min.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/dataTables.bootstrap.min.css}"/>
+	<script src="/js/jquery.min.js"></script>	
+</head>
+
+<body> 
+	<nav class="navbar navbar-default">
+  		<div class="container-fluid">
+
+    		<div class ="text-right brand-logout">
+    			
+  			</div>
+  		</div>
+	</nav>
+	
+	<form class="form-horizontal" action="#" th:action="@{/produtos/novo}" method="POST" th:object="${produto}">  
+		
+		
+		<div class="panel panel-default">
+	  		
+	  		<div class="panel-heading">
+	    		<div class= "clearfix">
+	    			<h3 class="panel-title br-title-panel">Produto</h3>
+	    		</div> 
+	  		</div>
+	  		
+	  		<div class="panel-body">
+	  		
+	  			<input hidden="hidden" th:field="*{id}"></input>
+	  			<div class= "form-group row">
+	  				<label for="descricao" class= "col-sm-2 control-label">Descrição:</label>
+	  				<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="descricao" 
+	  								th:field="*{descricao}" autofocus="autofocus"/>
+	       			</div>
+	  			</div>
+	  			
+	  			<div class= "form-group row" >
+	       			<label for="fabricante" class= "col-sm-2 control-label">Fabricante:</label>
+	       			<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="fabricante" 
+	  								th:field="*{fabricante}" />
+	       			</div>
+	       		</div>
+	       		
+	       		<div class="form-group">
+				<div class= "col-sm-offset-2 col-sm-10">
+	 				<!-- SALVAR -->
+					<button type="submit" name="salvar" class= "btn btn-success" >Salvar</button>
+					<!-- VOLTAR -->
+					<a class= "btn btn-default" href="javascript:history.back()">Voltar</a>
+				</div>
+			</div>
+	  		
+	  		</div> 
+	  		
+		</div>
+		
+	</form>
+	
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-datepicker.min.js"></script>
+	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
+	<script src="/js/jquery.dataTables.min.js"></script>
+	
+</body>
+
+</html>
+
