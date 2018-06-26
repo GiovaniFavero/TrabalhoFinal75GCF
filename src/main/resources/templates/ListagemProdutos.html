@@ -52,11 +52,11 @@
 			  				<td class="text-center">
 			  					<a class= "btn btn-link btn-xs" th:href="@{/produtos/editar/{idProd}(idProd = ${produto.id})}"  
 				  					title="Editar" data-tooltip="tooltip" data-placement="top">
-				  						<span class="glyphicon glyphicon-pencil"></span>
+				  						<image th:src="@{/images/btn-editar.png}" class="btn-customizado" />
 				  			   	</a>			  				
 			  					<a class= "btn btn-link btn-xs" th:href="@{/produtos/remover/{idProd}(idProd = ${produto.id})}"  
 				  					title="Editar" data-tooltip="tooltip" data-placement="top">
-				  						<span class="glyphicon glyphicon-remove"></span>
+				  						<image th:src="@{/images/btn-excluir.jpg}" class="btn-customizado" />
 				  			   	</a>	
 
 			  			    </td>
