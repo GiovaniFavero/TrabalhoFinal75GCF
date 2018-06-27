@@ -24,7 +24,8 @@ public class CadastroClienteController {
 	
 	@GetMapping("/novo")
 	public ModelAndView novo(){
-		ModelAndView mv = new ModelAndView("CadastroCliente"); 
+		ModelAndView mv = new ModelAndView("CadastroCliente");
+		//Novo.
 		mv.addObject("cliente", new Cliente()); 
 		return mv;
 	}
