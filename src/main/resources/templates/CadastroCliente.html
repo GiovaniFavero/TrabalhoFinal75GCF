@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head> 
+	<title>Cadastro de Produto</title>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="viewport" content="width=device-width"/>
+	
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/reset.css}"/> 
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/normalize.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/bootstrap.min.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/dataTables.bootstrap.min.css}"/>
+	<script src="/js/jquery.min.js"></script>	
+</head>
+
+<body> 
+	<nav class="navbar navbar-default">
+  		<div class="container-fluid">
+
+    		<div class ="text-right brand-logout">
+    			
+  			</div>
+  		</div>
+	</nav>
+	
+	<form class="form-horizontal" action="#" th:action="@{/clientes/novo}" method="POST" th:object="${cliente}">  
+		
+		
+		<div class="panel panel-default">
+	  		
+	  		<div class="panel-heading">
+	    		<div class= "clearfix">
+	    			<h3 class="panel-title br-title-panel">Cliente</h3>
+	    		</div> 
+	  		</div>
+	  		
+	  		<div class="panel-body">
+	  		
+	  			<input hidden="hidden" th:field="*{id}"></input>
+	  			<div class= "form-group row">
+	  				<label for="nome" class= "col-sm-2 control-label">Nome:</label>
+	  				<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="nome" 
+	  								th:field="*{nome}" autofocus="autofocus"/>
+	       			</div>
+	  			</div>
+	  			
+	  			<div class= "form-group row" >
+	       			<label for="cpf" class= "col-sm-2 control-label">CPF:</label>
+	       			<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="cpf" 
+	  								th:field="*{cpf}" />
+	       			</div>
+	       		</div>
+	       		
+	       		<div class= "form-group row" >
+	       			<label for="logradouro" class= "col-sm-2 control-label">Logradouro:</label>
+	       			<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="logradouro" 
+	  								th:field="*{logradouro}" />
+	       			</div>
+	       		</div>
+	       		
+	       		<div class= "form-group row" >
+	       			<label for="numero" class= "col-sm-2 control-label">Nº:</label>
+	       			<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="numero" 
+	  								th:field="*{numero}" />
+	       			</div>
+	       		</div>
+	       		
+	       		<div class= "form-group row" >
+	       			<label for="bairro" class= "col-sm-2 control-label">Bairro:</label>
+	       			<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="bairro" 
+	  								th:field="*{bairro}" />
+	       			</div>
+	       		</div>
+	       		
+	       		<div class= "form-group row" >
+	       			<label for="cidade" class= "col-sm-2 control-label">Cidade:</label>
+	       			<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="cidade" 
+	  								th:field="*{cidade}" />
+	       			</div>
+	       		</div>
+	       		
+	       		<div class= "form-group row" >
+	       			<label for="cep" class= "col-sm-2 control-label">CEP:</label>
+	       			<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="cep" 
+	  								th:field="*{cep}" />
+	       			</div>
+	       		</div>
+	       		
+	       		<div class= "form-group row" >
+	       			<label for="estado" class= "col-sm-2 control-label">Estado:</label>
+	       			<div class="col-sm-4">
+	  					<input type= "text" class= "form-control" id="estado" 
+	  								th:field="*{estado}" />
+	       			</div>
+	       		</div>
+	       		
+	       		<div class="form-group">
+				<div class= "col-sm-offset-2 col-sm-10">
+	 				<!-- SALVAR -->
+					<button type="submit" name="salvar" class= "btn btn-success" >Salvar</button>
+					<!-- VOLTAR -->
+					<a class= "btn btn-default" href="javascript:history.back()">Voltar</a>
+				</div>
+			</div>
+	  		
+	  		</div> 
+	  		
+		</div>
+		
+	</form>
+	
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-datepicker.min.js"></script>
+	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
+	<script src="/js/jquery.dataTables.min.js"></script>
+	
+</body>
+
+</html>
+
