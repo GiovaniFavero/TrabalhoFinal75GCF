@@ -1,0 +1,52 @@
+.navbar-brand{
+	padding-top: 6px; 
+	padding-left: 0px;
+}
+
+.panel-default{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.alert{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.br-link-panel{
+	float: right;
+	padding:0px;
+}
+
+.br-title-panel{
+	float:left;
+	padding-top: 2px;
+}
+
+.br-left-margin{
+	margin-left: 30px;
+}
+
+.brand-logout{
+	margin-top: 8px;
+}
+
+.brand-header-page {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.header-page{
+	padding-bottom: 9px;
+	padding-top: 9px;
+	border-bottom: 1px solid #eee;	
+}
+
+
+.btn-customizado{
+	height: 30px;
+	width: 30px;
+}
+   
