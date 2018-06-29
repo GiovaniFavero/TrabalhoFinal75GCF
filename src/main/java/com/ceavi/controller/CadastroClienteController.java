@@ -1,5 +1,6 @@
 package com.ceavi.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ceavi.model.Cliente;
+import com.ceavi.model.ItemPedido;
+import com.ceavi.model.Pedido;
 import com.ceavi.model.Produto;
 import com.ceavi.repository.ClienteRepository;
+import com.ceavi.repository.PedidoRepository;
 import com.ceavi.repository.ProdutoRepository;
 
 @Controller
@@ -21,6 +25,7 @@ public class CadastroClienteController {
 
 	@Autowired
 	public ClienteRepository clienteRepo;
+
 	
 	@GetMapping("/novo")
 	public ModelAndView novo(){

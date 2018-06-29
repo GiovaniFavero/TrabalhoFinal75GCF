@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head> 
+	<title>Cadastro de Produto</title>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="viewport" content="width=device-width"/>
+	
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/reset.css}"/> 
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/normalize.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/bootstrap.min.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/dataTables.bootstrap.min.css}"/>
+	<script src="/js/jquery.min.js"></script>	
+</head>
+
+<body> 
+	<nav class="navbar navbar-default">
+  		<div class="container-fluid">
+
+    		<div class ="text-right brand-logout">
+    			
+  			</div>
+  		</div>
+	</nav>
+	
+	
+		
+		
+		<div class="panel panel-default">
+	  		
+	  		<div class="panel-heading">
+	    		<div class= "clearfix">
+	    			<h3 class="panel-title br-title-panel">Pedido</h3>
+	    		</div> 
+	  		</div>
+	  		
+	  		<div class="panel-body">
+	  		
+	  		<form class="form-horizontal" th:action="@{/pedidos/novo}" method="POST" th:object="${pedido}">  
+	  			<div class= "form-group row">
+	  				<label for="id" class= "col-sm-2 control-label">Código Pedido:</label>
+	  				<div class="col-sm-1">
+	  					<input type= "text" class= "form-control" id="id" 
+	  								th:field="*{id}" />			
+	       			</div>
+	       			<label for="cpfCliente" class= "col-sm-2 control-label">CPF Cliente:</label>
+	  				<div class="col-sm-2">
+	  					<input type="text" class= "form-control" id="cpf" 
+	  								th:field="*{cliente.cpf}" autofocus="autofocus"/>
+	       			</div>
+	       			<label for="nomeCliente" class= "col-sm-2 control-label">Nome Cliente:</label>
+	  				<div class="col-sm-2">
+	  					<input type= "text" class= "form-control" id="nomeCliente" 
+	  								th:field="*{cliente.nome}" autofocus="autofocus"/>
+	       			</div>
+	  			</div>
+	  			
+	  			<div class= "form-group row">
+	  				<label for="id" class= "col-sm-2 control-label">ID produto:</label>
+	  				<div class="col-sm-1">
+	  					<input type= "text" class= "form-control" id="idProduto" name="idProduto"
+	  								autofocus="autofocus" />
+	       			</div>
+	       			<label for="quantidade" class= "col-sm-2 control-label">Quantidade:</label>
+	  				<div class="col-sm-2">
+	  					<input type= "text" class= "form-control" id="quantidade" name="quantidade"
+	  								 autofocus="autofocus" />
+	       			</div>
+	       			<label for="precoUnitario" class= "col-sm-2 control-label">Preço unitário:</label>
+	  				<div class="col-sm-2">
+	  					<input type= "text" class= "form-control" id="precoUnitario" name="precoUnitario"
+	  							 autofocus="autofocus" />
+	       			</div>
+	       			<label for="desconto" class= "col-sm-2 control-label">Desconto:</label>
+	  				<div class="col-sm-2">
+	  					<input type= "text" class= "form-control" id="desconto"  name="desconto"
+	  								 autofocus="autofocus" />
+	       			</div>
+	       			<div>	
+	       				<button type="submit" name="addItem" class= "btn btn-primary" >+</button>
+	       			</div>
+	  			</div>
+			   
+			   	<div class="panel-body">
+				 	<div class="table-responsive"> 	
+				  		<table id="table" class= "table table-bordered table-striped">
+				  			<thead>
+				  				<tr>
+					  				<th class="text-center col-md-2">Produto</th>
+					  				<th class="text-center">Fabricante</th>
+					  				<th class="text-center">Quantidade</th>
+					  				<th class="text-center">Preço unitário</th>
+					  				<th class="text-center">Desconto</th>
+					  				<th class="text-center col-md-1"></th>
+					  			</tr>  			
+				  			</thead>
+				  			<tbody>
+					  			<tr th:each="itemPedido : ${itensPedido}">
+					  				<td class="text-center" th:text="${itemPedido.produto.descricao}"></td>
+					  				<td class="text-center"><a th:text="${itemPedido.produto.fabricante}" ></a></td>
+					  				<td class="text-center"><a th:text="${itemPedido.quantidade}" ></a></td>
+					  				<td class="text-center"><a th:text="${itemPedido.precoUnitario}" ></a></td>
+					  				<td class="text-center"><a th:text="${itemPedido.desconto}" ></a></td>
+					  				<td class="text-center">
+		
+					  			    </td>
+					  			</tr>
+				  			</tbody>
+				  		</table>
+				  	</div>		
+			    </div>
+				<div class="form-group">
+					<div class= "col-sm-offset-2 col-sm-10">
+		 				<!-- SALVAR -->
+						<a class="btn btn-success" href="/pedidos">Salvar</a>
+						<!-- VOLTAR -->
+						<a class= "btn btn-default" href="javascript:history.back()">Voltar</a>
+					</div>
+			   </div>
+			   
+			   
+	  	    </form>
+
+	  		</div> 
+	  		
+		</div>
+		
+	
+	
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-datepicker.min.js"></script>
+	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
+	<script src="/js/jquery.dataTables.min.js"></script>
+	
+</body>
+
+</html>
+

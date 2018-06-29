@@ -26,12 +26,12 @@ public class Pedido {
 	@OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
 	private List<ItemPedido> itensPedido;
 	
+	public Pedido() {
+		this.itensPedido = new ArrayList<ItemPedido>();
+	}
+	
 	public void addItemPedido(ItemPedido item) {
-		if(this.itensPedido == null) 
-			this.itensPedido = new ArrayList<ItemPedido>();
-			
 		this.itensPedido.add(item);
-		
 	}
 
 	public long getId() {
@@ -58,6 +58,13 @@ public class Pedido {
 		this.itensPedido = itensPedido;
 	}
 	
+	public double totalPedido() {
+		double resultado = 0;
+		for(ItemPedido item: this.getItensPedido()) {
+			resultado = (item.getPrecoUnitario() * item.getQuantidade()) - item.getDesconto(); 
+		}
+		return resultado;
+	}
 	
 	
 

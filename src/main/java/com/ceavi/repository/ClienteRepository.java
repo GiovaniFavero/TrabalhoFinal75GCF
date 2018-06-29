@@ -7,5 +7,5 @@ import com.ceavi.model.Cliente;
 public interface ClienteRepository extends JpaRepository<Cliente, Long>{
 	
 	public java.util.List<Cliente> findByNome(String nome);
-
+	public java.util.List<Cliente> findByCpf(String cpf);
 }

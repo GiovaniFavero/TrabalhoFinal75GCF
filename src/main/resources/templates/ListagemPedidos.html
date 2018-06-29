@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+<head> 
+	<title>Cadastro de Produto</title>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="viewport" content="width=device-width"/>
+	
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/reset.css}"/> 
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/normalize.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/bootstrap.min.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}"/>
+	<link rel="stylesheet" type= "text/css" th:href="@{/css/dataTables.bootstrap.min.css}"/>
+	<script src="/js/jquery.min.js"></script>	
+</head>
+
+<body> 
+	<div class="panel panel-default">
+		<div class="header-page">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-10">
+						<h4>Produtos</h4>
+					</div>
+					<div class="col-sm-2">
+						<div class="brand-header-page">
+							<a class="btn btn-primary" href="/pedidos/novo">Novo Pedido</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	  	<div class="panel-body">
+		 	<div class="table-responsive"> 	
+		  		<table id="table" class= "table table-bordered table-striped">
+		  			<thead>
+		  				<tr>
+			  				<th class="text-center col-md-2">Código</th>
+			  				<th class="text-center">Código Cliente</th>
+			  				<th class="text-center">Nome Cliente</th>
+			  				<th class="text-center">Total Pedido</th>
+			  				<th class="text-center col-md-1"></th>
+			  			</tr>  			
+		  			</thead>
+		  			<tbody>
+			  			<tr th:each="pedido : ${listaPedidos}">
+			  				<td class="text-center" th:text="${pedido.id}"></td>
+			  				<td class="text-center"><a th:text="${pedido.cliente.id}" ></a></td>
+			  				<td class="text-center"><a th:text="${pedido.cliente.nome}" ></a></td>
+			  				<td class="text-center"><a th:text="${pedido.totalPedido()}" ></a></td>
+			  				<td class="text-center">
+			  					<a class= "btn btn-link btn-xs" th:href="@{/pedidos/editar/{idPed}(idPed = ${pedido.id})}"  
+				  					title="Editar" data-tooltip="tooltip" data-placement="top">
+				  						<image th:src="@{/images/btn-editar.png}" class="btn-customizado" />
+				  			   	</a>			  				
+			  					<a class= "btn btn-link btn-xs" th:href="@{/pedidos/remover/{idPed}(idPed = ${pedido.id})}"  
+				  					title="Editar" data-tooltip="tooltip" data-placement="top">
+				  						<image th:src="@{/images/btn-excluir.jpg}" class="btn-customizado" />
+				  			   	</a>	
+
+			  			    </td>
+			  			</tr>
+		  			</tbody>
+		  		</table>
+		  	</div>		
+	    </div>
+	</div>
+
+	
+</body>
+
+</html>
+
