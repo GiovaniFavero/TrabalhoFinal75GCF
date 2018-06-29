@@ -45,9 +45,14 @@ public class PedidoController {
 		ItemPedido item = new ItemPedido();
 		item.setProduto(produtoRepo.findById(Long.parseLong(idProduto)).get());
 		item.setQuantidade(Integer.parseInt(quantidade));
-		item.setPrecoUnitario(Double.parseDouble(precoUnitario));
-		item.setDesconto(Double.parseDouble(desconto));
 		pedido.setCliente(clienteRepo.findByCpf(pedido.getCliente().getCpf()).get(0));
+		if(desconto.isEmpty())
+			desconto = "0";
+		item.setDesconto(Double.parseDouble(desconto) + pedido.getCliente().getDescontoPorCliente());
+		if(precoUnitario.isEmpty())
+			item.setPrecoUnitario(item.getProduto().getPrecoVenda());
+		else
+			item.setPrecoUnitario(Double.parseDouble(precoUnitario));
 		pedido = pedidoRepo.save(pedido);
 		item.setPedido(pedido);
 		item = itemPedidoRepo.save(item);

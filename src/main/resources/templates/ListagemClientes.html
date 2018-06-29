@@ -59,6 +59,7 @@
 			  				<th class="text-center">Cidade</th>
 			  				<th class="text-center">CEP</th>
 			  				<th class="text-center">Estado</th>
+			  				<th class="text-center">Desc. por cliente</th>
 			  				<th class="text-center col-md-1"></th>
 			  			</tr>  			
 		  			</thead>
@@ -73,6 +74,7 @@
 			  				<td class="text-center"><a th:text="${cliente.cidade}" ></a></td>
 			  				<td class="text-center"><a th:text="${cliente.cep}" ></a></td>
 			  				<td class="text-center"><a th:text="${cliente.estado}" ></a></td>
+			  				<td class="text-center"><a th:text="${cliente.descontoPorCliente}" ></a></td>
 			  				<td class="text-center">
 			  					<a class= "btn btn-link btn-xs" th:href="@{/clientes/editar/{idCli}(idCli = ${cliente.id})}"  
 				  					title="Editar" data-tooltip="tooltip" data-placement="top">

@@ -28,6 +28,18 @@ public class Cliente {
 	private String cep;
 	
 	private String estado;
+	
+	private double descontoPorCliente;
+	
+	
+
+	public double getDescontoPorCliente() {
+		return descontoPorCliente;
+	}
+
+	public void setDescontoPorCliente(double descontoPorCliente) {
+		this.descontoPorCliente = descontoPorCliente;
+	}
 
 	public long getId() {
 		return id;

@@ -16,6 +16,18 @@ public class Produto {
 
 	private String fabricante;
 	
+	private double precoVenda;
+	
+	
+	
+	public double getPrecoVenda() {
+		return precoVenda;
+	}
+
+	public void setPrecoVenda(double precoVenda) {
+		this.precoVenda = precoVenda;
+	}
+
 	public Produto(){
 		
 	}
