@@ -14,22 +14,16 @@ import com.ceavi.model.Cliente;
 import com.ceavi.model.ItemPedido;
 import com.ceavi.model.Pedido;
 import com.ceavi.model.Produto;
-import com.ceavi.repository.ClienteRepository;
-import com.ceavi.repository.PedidoRepository;
-import com.ceavi.repository.ProdutoRepository;
 
 @Controller
-@RequestMapping("/clientes")
-public class CadastroClienteController {
+@RequestMapping("/enderecos")
+public class CadastroEnderecoController {
 	
-
-	@Autowired
-	public ClienteRepository clienteRepo;
 
 	
 	@GetMapping("/novo")
 	public ModelAndView novo(){
-		ModelAndView mv = new ModelAndView("CadastroCliente");
+		ModelAndView mv = new ModelAndView("CadastroEndereco");
 		//Novo.
 		mv.addObject("cliente", new Cliente()); 
 		return mv;
@@ -37,27 +31,27 @@ public class CadastroClienteController {
 	
 	@PostMapping("/novo")
 	public String salvarProduto(@ModelAttribute("cliente") Cliente cliente){
-		clienteRepo.save(cliente);
+	//	clienteRepo.save(cliente);
 		return "redirect:/clientes";
 	}
 	
 	@RequestMapping("/remover/{id}")
 	public String exclusao(@PathVariable long id){
-		clienteRepo.deleteById(id);
+		//clienteRepo.deleteById(id);
 		return "redirect:/clientes";
 	}
 	
 	@RequestMapping
 	public ModelAndView listagemClientes(){
 		ModelAndView mv = new ModelAndView("ListagemClientes");
-		mv.addObject("listaClientes", clienteRepo.findAll());
+		//mv.addObject("listaClientes", clienteRepo.findAll());
 		return mv;
 	}
 	
 	@RequestMapping("/editar/{id}")
 	public ModelAndView edicao(@PathVariable long id){
 		ModelAndView mv = new ModelAndView("CadastroCliente"); 
-		mv.addObject("cliente", clienteRepo.findById(id)); 
+		//mv.addObject("cliente", clienteRepo.findById(id)); 
 		return mv;
 	}
 

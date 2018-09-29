@@ -18,6 +18,18 @@
 </head>
 
 <body> 
+	<nav class="navbar navbar-default">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      		</div>
+			<ul class="nav navbar-nav">
+			 	<li><a href="/clientes">Clientes</a></li>
+			 	<li><a href="/produtos">Produtos</a></li>
+			    <li><a href="/pedidos">Pedidos</a></li>
+			 </ul>
+			 
+	  	</div>
+	</nav>
 	<div class="panel panel-default">
 		<div class="header-page">
 			<div class="container-fluid">
@@ -41,6 +53,7 @@
 			  				<th class="text-center col-md-2">Código</th>
 			  				<th class="text-center">Descrição</th>
 			  				<th class="text-center">Fabricante</th>
+			  				<th class="text-center">Preço venda</th>
 			  				<th class="text-center col-md-1"></th>
 			  			</tr>  			
 		  			</thead>
@@ -49,6 +62,7 @@
 			  				<td class="text-center" th:text="${produto.id}"></td>
 			  				<td class="text-center"><a th:text="${produto.descricao}" ></a></td>
 			  				<td class="text-center"><a th:text="${produto.fabricante}" ></a></td>
+			  				<td class="text-center"><a th:text="${produto.precoVenda}" ></a></td>
 			  				<td class="text-center">
 			  					<a class= "btn btn-link btn-xs" th:href="@{/produtos/editar/{idProd}(idProd = ${produto.id})}"  
 				  					title="Editar" data-tooltip="tooltip" data-placement="top">
